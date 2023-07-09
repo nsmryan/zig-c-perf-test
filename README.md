@@ -1,0 +1,1 @@
+See https://itscomputersciencetime.netlify.app/zig-assembly-look/ and the posts that inspired this repo https://owen.cafe/posts/six-times-faster-than-c/ and https://owen.cafe/posts/the-same-speed-as-c/
