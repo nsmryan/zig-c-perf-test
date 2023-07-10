@@ -46,6 +46,10 @@ pub fn main() !void {
         while (iter < iterations) : (iter += 1) {
             result += run_switches_3(input[0..]);
         }
+    } else if (algorithm == 4) {
+        while (iter < iterations) : (iter += 1) {
+            result += run_switches_4(input[0..]);
+        }
     }
     std.debug.print("{}\n", .{result});
 }
@@ -123,5 +127,22 @@ fn run_switches_3(input: [*]u8) isize {
         input_ptr += 1;
         if (c == 0) return res;
         res += table[c];
+    }
+}
+
+fn run_switches_4(input: [*]u8) isize {
+    var input_ptr = input;
+    var res: isize = 0;
+    while (true) {
+        const c: u8 = input_ptr[0];
+
+        if (c == 0) {
+            return res;
+        }
+
+        input_ptr += 1;
+        var p = @intFromBool(c == 'p');
+        var s = -1 * @as(isize, @intFromBool(c == 's'));
+        res += p + s;
     }
 }
